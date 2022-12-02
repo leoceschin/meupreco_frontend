@@ -1,0 +1,49 @@
+.container-product {
+    background-color: cornsilk;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 8px 0;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.container-img {
+    display:contents;
+    float: left;
+    
+}
+
+.information {
+    width: 60%;
+    margin-left: 15px;
+    vertical-align: top;
+    display: flex;
+    flex-flow:column;    
+}
+.information span{
+    flex-flow: column;
+}
+
+.price {
+    margin-bottom: 15px;
+}
+
+.delete{
+    background-color: coral;
+    text-decoration:aliceblue;
+
+    max-width: min-content;
+}
+
+.delete p {
+    padding: 0;
+    margin: 0;
+    color: aliceblue;
+}
+
+img {
+    max-width: 30%;
+    border-radius: 6px;
+}

@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import axios from 'axios';
 
-function App() {
+import "./App.css";
+import Product from "./Product";
+import Products from "./Products";
+
+const App = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const {data} = await axios.get('//api.localhost:8080/manga/all');
+      setProducts(data);  
+    };
+    fetchProducts();
+
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <div className="container">
+        <Products 
+          products={products}
+        />
+      </div>
+
+    </>
+  )
 }
 
 export default App;
